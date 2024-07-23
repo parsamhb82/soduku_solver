@@ -137,7 +137,8 @@ def soduku_input():
                 break
         main_soduku.append(this_line)
     return main_soduku
-print(soduku_input())
+
+
 
 
 
@@ -154,65 +155,99 @@ print(soduku_input())
     
 
 
-n = random.randint(0,1)
-easy_board1 = [
-    [2, 0, 1, 8, 0, 0, 0, 0, 4],
-    [8, 9, 0, 3, 0, 0, 2, 6, 1],
-    [0, 6, 7, 1, 0, 9, 0, 0, 5],
-    [0, 0, 8, 0, 0, 6, 0, 0, 0],
-    [0, 0, 3, 5, 0, 0, 6, 0, 0],
-    [0, 0, 2, 7, 4, 3, 0, 9, 8],
-    [0, 0, 0, 0, 0, 0, 0, 1, 9],
-    [5, 0, 9, 0, 3, 2, 0, 0, 6],
-    [0, 0, 0, 0, 1, 7, 4, 5, 2]
-]
-easy_board2 = [
-    [0, 0, 0, 1, 0, 0, 0, 0, 3],
-    [2, 1, 8, 0, 0, 6, 7, 0, 4],
-    [7, 5, 0, 0, 0, 4, 0, 6, 0],
-    [0, 4, 9, 8, 3, 1, 2, 0, 0],
-    [5, 3, 1, 0, 0, 0, 0, 4, 8],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [9, 6, 2, 0, 0, 0, 0, 0, 0],
-    [0, 8, 5, 7, 6, 3, 4, 9, 0],
-    [0, 0, 4, 9, 2, 0, 5, 1, 0]
-]
+sudoku_puzzle_1 = [
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+    ]
 
+    # Sudoku Puzzle 2
+sudoku_puzzle_2 = [
+        [8, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 3, 6, 0, 0, 0, 0, 0],
+        [0, 7, 0, 0, 9, 0, 2, 0, 0],
+        [0, 5, 0, 0, 0, 7, 0, 0, 0],
+        [0, 0, 0, 0, 4, 5, 7, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0, 3, 0],
+        [0, 0, 1, 0, 0, 0, 0, 6, 8],
+        [0, 0, 8, 5, 0, 0, 0, 1, 0],
+        [0, 9, 0, 0, 0, 0, 4, 0, 0]
+    ]
 
+    # Sudoku Puzzle 3
+sudoku_puzzle_3 = [
+        [0, 0, 5, 3, 0, 0, 0, 0, 0],
+        [8, 0, 0, 0, 0, 0, 0, 2, 0],
+        [0, 7, 0, 0, 1, 0, 5, 0, 0],
+        [4, 0, 0, 0, 0, 5, 3, 0, 0],
+        [0, 1, 0, 0, 7, 0, 0, 0, 6],
+        [0, 0, 3, 2, 0, 0, 0, 8, 0],
+        [0, 6, 0, 5, 0, 0, 0, 0, 9],
+        [0, 0, 4, 0, 0, 0, 0, 3, 0],
+        [0, 0, 0, 0, 0, 9, 7, 0, 0]
+    ]
 
-easy_boards = [easy_board1, easy_board2]
-level = input("inset your difficulity Easy | Medium | Hard: ")
-if level == "Easy":
-    main_soduku = easy_boards[n]
-elif level == "salam":
-    main_soduku = [
-    [5, 3, 3, 0, 7, 0, 0, 1, 2],
+    # Sudoku Puzzle 4
+sudoku_puzzle_4 = [
+        [0, 0, 0, 6, 0, 0, 4, 0, 0],
+        [7, 0, 0, 0, 0, 3, 6, 0, 0],
+        [0, 0, 0, 0, 9, 1, 0, 8, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 5, 0, 1, 8, 0, 0, 0, 3],
+        [0, 0, 0, 3, 0, 6, 0, 4, 5],
+        [0, 4, 0, 2, 0, 0, 0, 6, 0],
+        [9, 0, 3, 0, 0, 0, 0, 0, 0],
+        [0, 2, 0, 0, 0, 0, 1, 0, 0]
+    ]
+
+    # Sudoku Puzzle 5
+sudoku_puzzle_5 = [
+        [0, 0, 0, 0, 0, 0, 0, 1, 2],
+        [0, 0, 0, 0, 3, 5, 0, 0, 0],
+        [0, 0, 0, 7, 0, 1, 0, 0, 0],
+        [0, 3, 0, 0, 2, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 7, 0],
+        [0, 0, 0, 1, 0, 4, 0, 0, 0],
+        [0, 0, 0, 0, 9, 0, 0, 0, 0],
+        [9, 1, 0, 0, 0, 0, 0, 0, 0]
+    ]
+sudoku_puzzle6 = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],
     [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 5, 0, 0, 6, 0, 0, 0, 3],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
     [4, 0, 0, 8, 0, 3, 0, 0, 1],
     [7, 0, 0, 0, 2, 0, 0, 0, 6],
     [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 3, 5],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
-else:
-    print("Invalid level")
-    exit()
+    ]
 
 
+list_sodoku=[sudoku_puzzle_1,sudoku_puzzle_2,sudoku_puzzle_3,sudoku_puzzle_4,sudoku_puzzle_5,sudoku_puzzle6]
+n = random.randint(0,5)
 
 
+user_input = input("Sudoku generator|Input Sudoku|Pre-made Sudoku")
+enter = ["Sudoku generator","Input Sudoku","Pre-made Sudoku"]
 
+while user_input not in enter:
+    print("wrong answer")
+    user_input = input("Sudoku generator|Input Sudoku|Pre-made Sudoku ")
+if enter == 'Pre-made Sudoku':
+    main_soduku = list_sodoku[n]
+if enter == 'Input Sudoku':
+    main_soduku = soduku_input()
+if enter == 'Sudoku generator':
+    main_soduku = soduku_genarator()
 
-initials_list = initails_list_maker(main_soduku)
-print_main_soduku(main_soduku, initials_list)
-start = time.time()
-back_track_csp = []
-bool_check = True
-print()
-print()
-print()
 
 while not win_check(main_soduku):
     main_soduku, back_track_csp, bool_check, initials_list = soduku_csp(main_soduku, back_track_csp, bool_check , initials_list)
