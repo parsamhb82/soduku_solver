@@ -137,7 +137,29 @@ def soduku_input():
                 break
         main_soduku.append(this_line)
     return main_soduku
-
+def soduku_genarator():
+    main_soduku = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ]
+    back_track_csp = []
+    bool_check = True
+    initials_list = []
+    while not win_check(main_soduku):
+        main_soduku, back_track_csp, bool_check, initials_list = soduku_csp(main_soduku, back_track_csp, bool_check , initials_list)
+    for i in range(9):
+        for j in range(9):
+            rate = random.random()
+            if rate > 0.7 :
+                main_soduku[i][j] = 0
+    return main_soduku
 
 
 
@@ -241,14 +263,17 @@ enter = ["Sudoku generator","Input Sudoku","Pre-made Sudoku"]
 while user_input not in enter:
     print("wrong answer")
     user_input = input("Sudoku generator|Input Sudoku|Pre-made Sudoku ")
-if enter == 'Pre-made Sudoku':
+if user_input == 'Pre-made Sudoku':
     main_soduku = list_sodoku[n]
-if enter == 'Input Sudoku':
+if user_input == 'Input Sudoku':
     main_soduku = soduku_input()
-if enter == 'Sudoku generator':
+if user_input == 'Sudoku generator':
     main_soduku = soduku_genarator()
 
-
+start = time.time()
+back_track_csp = []
+bool_check = True
+initials_list = initails_list_maker(main_soduku)
 while not win_check(main_soduku):
     main_soduku, back_track_csp, bool_check, initials_list = soduku_csp(main_soduku, back_track_csp, bool_check , initials_list)
 for i in range(9):
